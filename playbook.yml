@@ -5,3 +5,4 @@
   roles:
     - geerlingguy.java
     - geerlingguy.git
+    - ANXS.build-essential
