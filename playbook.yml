@@ -6,3 +6,6 @@
     - geerlingguy.java
     - geerlingguy.git
     - ANXS.build-essential
+  tasks:
+    - name: Install gdb
+      apt: pkg=gdb state=installed force=yes
