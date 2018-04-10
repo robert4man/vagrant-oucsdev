@@ -1,24 +1,63 @@
 ---
-  
+# Keeping this very simple
+
 - hosts: all
   become: true
-  roles:
-    - geerlingguy.java
-    - geerlingguy.git
-    - ANXS.build-essential
+
   tasks:
+    - name: Install build-essential
+      apt:
+        name: build-essential
+        state: present
+
+    - name: Install gdb
+      apt:
+        name: gdb
+        state: present
+
+    - name: Install cppcheck
+      apt:
+        name: cppcheck
+        state: present
+
+    - name: Install OpenJDK 8
+      apt:
+        name: openjdk-8-jdk
+        state: present
+
+    - name: Install git
+      apt:
+        name: git
+        state: present
+
+    - name: Deploy Google Test Framework
+      git:
+        repo: 'https://github.com/google/googletest.git'
+        dest: /opt/google
+        version: release-1.8.0
+
+    - name: Configure GTEST_DIR Environment Var
+      lineinfile:
+        path: /etc/profile.d/googletest.sh
+        create: yes
+        regexp: '^export GTEST_DIR='
+        line: 'export GTEST_DIR=/opt/google/googletest'
+
     - name: Install gdb
       apt:
               name: gdb
               state: present
+
     - name: Install Doxygen
       apt:
               name: doxygen
               state: present
+
     - name: Install Valgrind
       apt:
               name: valgrind
               state: present
+
     - name: Change Welcome message of VM
       blockinfile:
               path: /etc/update-motd.d/10-help-text
