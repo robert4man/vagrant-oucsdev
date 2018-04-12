@@ -11,6 +11,10 @@
       apt:
               name: gdb
               state: present
+    - name: Install Doxygen
+      apt:
+              name: doxygen
+              state: present
     - name: Install Valgrind
       apt:
               name: valgrind
@@ -28,5 +32,5 @@
                       printf "         * Doxygen\n"
                       printf "         * Git\n"
                       printf "         * OpenJDK 8\n"
-    
+                      printf "         * Valgrind\n" 
 
