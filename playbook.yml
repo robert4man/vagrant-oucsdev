@@ -6,3 +6,31 @@
     - geerlingguy.java
     - geerlingguy.git
     - ANXS.build-essential
+  tasks:
+    - name: Install gdb
+      apt:
+              name: gdb
+              state: present
+    - name: Install Doxygen
+      apt:
+              name: doxygen
+              state: present
+    - name: Install Valgrind
+      apt:
+              name: valgrind
+              state: present
+    - name: Change Welcome message of VM
+      blockinfile:
+              path: /etc/update-motd.d/10-help-text
+              block: |
+                      printf "\n"
+                      printf "The following have been installed for you convenience:\n"
+                      printf "         * build-essential (gcc, g++)\n"
+                      printf "         * Vim, Emacs\n"
+                      printf "         * Cppcheck\n"
+                      printf "         * Google Test Framework (Cloned)\n"
+                      printf "         * Doxygen\n"
+                      printf "         * Git\n"
+                      printf "         * OpenJDK 8\n"
+                      printf "         * Valgrind\n" 
+
