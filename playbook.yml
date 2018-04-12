@@ -7,8 +7,12 @@
   tasks:
     - name: Install build-essential
       apt:
-        name: build-essential
+        name: "{{ item }}"
         state: present
+      with_items:
+        - build-essential # includes gcc, g++ and make
+        - autoconf
+        - cmake
 
     - name: Install gdb
       apt:
