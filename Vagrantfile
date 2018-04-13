@@ -8,8 +8,9 @@ Vagrant.configure("2") do |config|
   config.vm.define "oucsdev" do |oucsdev|
     oucsdev.vm.hostname = "oucsdev"
     oucsdev.vm.provision "ansible_local" do |ansible|
-      ansible.playbook = "playbook.yml"
-      ansible.config_file = "ansible.cfg"
+      ansible.playbook = "provisioning/playbook.yml"
+      ansible.config_file = "provisioning/ansible.cfg"
+      ansible.compatibility_mode = "2.0"
     end
   end
 end

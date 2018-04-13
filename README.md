@@ -44,10 +44,12 @@ host machine and will persist even when the VM is destroyed.
 
 ## Docker image
 
-More or less the same thing can also be done from Docker. The following will
-build a re-usable docker image.
+The same sort of thing can also be accomplished with Docker. The following will
+build a re-usable docker image. You can then run it with a mount to the projects
+directory where like /vagrant/projects you can access files from the host machine
+under /srv/projects and compile or test them.
 
 ```bash
 docker build -t oucsdev .
-docker run -it oucsdev /bin/bash
+docker run -it -v "$(pwd)"/projects:/srv/projects oucsdev bash
 ```

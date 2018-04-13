@@ -1,0 +1,7 @@
+{
+    // Recommended settings for working with this repo
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 2,
+}
