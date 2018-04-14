@@ -1,0 +1,44 @@
+2018-04-03  Robert Foreman <foremar1@ohio.edu>
+    * README.md : created README file
+
+2018-04-05  Robert Foreman <foremar1@ohio.edu>
+    * Vagrantfile : Created; Added initial Vagrantfile
+    * ansible.cfg : Created; Added configurations
+    * playbook.yml : Created; Added geerlingguy java role
+    * requirements.yml : Created; added geerlingguy.java as source
+    * roles/.gitignore : created gitignore
+    * .gitignore : added gitignore to rep root
+    * README.md : update readme with some basic info
+
+2018-04-06  Jordan Ball  <jb296215@ohio.edu>
+    * playbook.yml : added geerlinguy.git role to playbook
+    * requirements.yml : added geerlingguy.git role to requirements.yml
+
+2018-04-08  Jordan Ball <jb296215@ohio.edu>
+    * playbook.yml : added build-essential role to playbook
+    * requirements.yml : added build-essential role to requirements
+    * playbook.yml : added task to playbook to install gdb
+
+2018-04-08  Jonathan Fiege <jf786915@ohio.edu>
+    * README.MD : updated readme file with new instructions
+
+2018-04-12  Jordan Ball <jb296215@ohio.edu>
+    * playbook.yml : added tasks to playbook
+    Added task to update ubuntu machine help-text startup message to include a
+    list of the pre-installed tools
+    Added task to install valgrind
+
+2018-04-12  Robert Foreman <foremar1@ohio.edu>
+    * .gitignore : updated list of ignores
+    * Dockerfile : created Dockerfile for docker to include the ansible
+    playbook
+    * README.md : updated and stylized REAME with new instructions and
+    formatting
+    * playbook.yml : refactored the roles into simple tasks
+    added tasks to deploy Google Test Framework and configure GTEST_DIR
+    variable
+    * /roles : removed roles directory
+    * requirements.yml : removed requirements file
+
+2018-04-13 Jordan Ball <jb296215@ohio.edu>
+    * CHANGELOG : changelog created and filled with change history
