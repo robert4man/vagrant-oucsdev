@@ -47,6 +47,45 @@
         regexp: '^export GTEST_DIR='
         line: 'export GTEST_DIR=/opt/google/googletest'
 
+    - name: Check if Google Test has already been tested
+      stat:
+        path: /home/vagrant/test/gtest-all.o
+      register: gtest
+
+    - name: Test Google Test
+      block:
+        - name: Create a test directory
+          file:
+            path: /home/vagrant/test
+            state: directory
+        - name: Deploy the Makefile
+          copy:
+            src: files/Googletest-Makefile
+            dest: /home/vagrant/test/Makefile
+        - name: Generate the sample tests
+          make:
+            chdir: /home/vagrant/test
+        - name: Run Sample1 Unit Tests
+          command: ./sample1_unittest
+          args:
+            chdir: /home/vagrant/test
+          register: unittest
+        - debug: msg="{{ unittest.stdout_lines }}"
+        - name: Run Sample2 Unit Tests
+          command: ./sample2_unittest
+          args:
+            chdir: /home/vagrant/test
+          register: unittest
+        - debug: msg="{{ unittest.stdout_lines }}"
+        - name: Run Sample4 Unit Tests
+          command: ./sample4_unittest
+          args:
+            chdir: /home/vagrant/test
+          register: unittest
+        - debug: msg="{{ unittest.stdout_lines }}"
+      when: ansible_virtualization_type != "docker" and gtest.stat.exists == False
+      become: false
+
     - name: Install Doxygen
       apt:
         name: doxygen
@@ -70,4 +109,4 @@
           printf "  * Doxygen\n"
           printf "  * Git\n"
           printf "  * OpenJDK 8\n"
-          printf "  * Valgrind\n" 
+          printf "  * Valgrind\n"
