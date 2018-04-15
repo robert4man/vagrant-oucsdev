@@ -14,6 +14,16 @@
         - autoconf
         - cmake
 
+    - name: Installing Vim
+      apt:
+        name: vim
+        state: present
+
+    - name: Installing Emacs
+      apt:
+        name: emacs
+        state: present
+
     - name: Install gdb
       apt:
         name: gdb
