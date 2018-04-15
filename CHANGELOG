@@ -42,3 +42,7 @@
 
 2018-04-13 Jordan Ball <jb296215@ohio.edu>
     * CHANGELOG : changelog created and filled with change history
+
+2018-04-15 Robert Foreman <foremar1@ohio.edu>
+    * playbook.yml : updated build-essential with more packages (build-essential, autoconf, cmake)
+    * /.vscode : added extensions and settings for vscode
