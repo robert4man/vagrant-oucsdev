@@ -34,3 +34,8 @@
 - In  Linux you have to give yourself permission to use things like docker and virtualbox
 
   ```bash
+  cat /etc/group .
+  # First check are you part of the virtualbox group
+  # If not add your name to the group by opening the file in an editor of your choice
+  nano /etc/group
+  ```
