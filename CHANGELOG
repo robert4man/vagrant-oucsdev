@@ -46,3 +46,30 @@
 2018-04-15 Robert Foreman <foremar1@ohio.edu>
     * playbook.yml : updated build-essential with more packages (build-essential, autoconf, cmake)
     * /.vscode : added extensions and settings for vscode
+	* .gitignore : updated list of ignores
+	* .vscode : added extensions.json
+	* .vscode : added settings.json
+	* Dockerfile : changed to help docker detup
+	* README.md : Updated to give more detail on docker
+	* Vagrantfile : updated to relefct the new location of playbook.yml and ansible.cfg
+	* /4-18-2018.txt : fixed error
+	
+2018-04-15 Jonathan Feige <jf786915@ohio.edu>
+	* /4-11-2018.txt : added to the notes file
+	* /4-12-2018.txt : added to the notes file
+	* /3-29-2018.txt : added to the notes file
+	* /4-18-2018.txt : fixed error
+		
+2018-04-13 Jordan Ball <jb296215@ohio.edu>
+	* LICENSE : MIT license added
+	* file/Googletest-Makefile : merged to the provisioning file
+	* /playbook.yml : changed to use Googletest-Makefile
+	* CHANGELOG : updated through 2018-04-15
+	
+2018-04-16 David Wisniewski <dw269715@ohio.edu>
+	* LINUX.md : added file for LINUX related related issues
+	* LINUX.md : updted to help with things like virtualbox or docker
+	* Microsoft_Hyper-V.md : added file for Hyper-V related issues
+	
+2018-04-17 Robert Foreman <foremar1@ohio.edu>
+	* roles : Removing the roles dir again
