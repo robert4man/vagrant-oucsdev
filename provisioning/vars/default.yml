@@ -1,0 +1,13 @@
+---
+install_build_essential: true
+install_vim: true
+install_emacs: true
+install_gdb: true
+install_cppcheck: true
+install_openjdk8: true
+install_git: true
+install_google_test: true
+install_doxygen: true
+install_valgrind: true
+
+
