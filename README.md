@@ -53,3 +53,10 @@ under /srv/projects and compile or test them.
 docker build -t oucsdev .
 docker run -it -v "$(pwd)"/projects:/srv/projects oucsdev bash
 ```
+
+Note: it is only necessary to run `docker build` once, but you can run the
+`docker run` command as often as you like to access a new instance of the
+container. You are also not limited to this projects directory. You can map
+any local path and mount it inside the container just about anywhere you like.
+Something under /srv/ should be safe. Another benefit is that Docker will
+launch significantly faster than restarting a VirtualBox VM.
