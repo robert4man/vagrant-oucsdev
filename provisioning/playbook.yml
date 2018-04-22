@@ -5,7 +5,8 @@
   become: true
 
   vars_files:
-    - vars/default.yml
+    - vars/default_config.yml
+    - vars/local_config.yml
 
   tasks:
     - name: Installing build-essential
